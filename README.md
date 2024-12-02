@@ -31,7 +31,7 @@ This React project provides comprehensive visualization of agricultural data fro
 
 1. Clone the repository
 ```bash
-git clone https://your-repository-url.git
+git clone https://github.com/Kanai2003/agriculture-data-table
 cd agricultural-data-tables
 ```
 
