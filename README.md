@@ -37,10 +37,27 @@ cd agricultural-data-tables
 
 2. Install dependencies
 ```bash
+npm install
+
+or 
+
 yarn install
 ```
 
 3. Run Application
 ```bash
-yarn dev
+npm run dev
+
+or
+
+yarn run dev
+```
+
+4. Build Application
+```bash
+npm run build
+
+or
+
+yarn build
 ```
