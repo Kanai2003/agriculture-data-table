@@ -1,5 +1,10 @@
 # Agricultural Data Analysis Tables
 
+
+![Agricultural Data Visualization](./public//screenshot/yieldTable.png)
+![Agricultural Data Visualization](./public//screenshot/CorpProductionTable.png)
+
+
 ## Project Overview
 
 This React project provides comprehensive visualization of agricultural data from 1950 to 2020, featuring two interactive tables that offer insights into crop production, yield, and cultivation areas.
