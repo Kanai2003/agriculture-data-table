@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { Tabs, Card } from "@mantine/core";
 import { CropProductionExtremesTable } from "./CorpProductionExtremesTable";
