@@ -1,7 +1,9 @@
+"ues client";
 import React, { useMemo } from "react";
 import { Table, Card, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { AgriculturalData } from "../type/type";
+import CropProductionExtremesChart from "./CorpProductionChart";
 
 export const CropProductionExtremesTable: React.FC<{
   data: AgriculturalData[];
@@ -55,28 +57,9 @@ export const CropProductionExtremesTable: React.FC<{
     </tr>
   ));
 
-  return (
-    <Card
-      shadow="md"
-      padding="lg"
-      radius="md"
-      withBorder
-      style={{
-        width: isSmallScreen ? "100%" : "80%",
-        margin: "0 auto",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      <Text
-        size="xl"
-        fw={700}
-        mb="lg"
-       
-        style={{ color: "#1a73e8", textAlign:'center' }}
-      >
-        Crop Production Extremes (1950-2020)
-      </Text>
-      <div style={{ overflow: "hidden" }}>
+  const tableSection = () => {
+    return (
+      <div style={{ overflow: "auto", borderRadius: "10px" }}>
         <Table
           highlightOnHover
           withTableBorder
@@ -97,7 +80,7 @@ export const CropProductionExtremesTable: React.FC<{
         </Table>
         <div
           style={{
-            maxHeight: "80vh", 
+            maxHeight: "80vh",
             overflowY: "scroll",
             border: "1px solid #ccc",
           }}
@@ -116,6 +99,50 @@ export const CropProductionExtremesTable: React.FC<{
           </Table>
         </div>
       </div>
+    );
+  };
+
+  const chartSection = () => {
+    return (
+      <div
+        style={{
+          margin: "0 auto",
+          display: "flex",
+          gap: "10px",
+          flexDirection: isSmallScreen ? "column" : "row",
+          width: "100%",
+          justifyContent: "center",
+        }}
+      >
+        <CropProductionExtremesChart data={processedData} />
+      </div>
+    );
+  };
+
+  return (
+    <Card
+      shadow="md"
+      // padding="lg"
+      radius="md"
+      withBorder
+      style={{
+        width: "100%",
+        margin: "20px",
+        backgroundColor: "#f9f9f9",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Text
+        size="xl"
+        fw={700}
+        mb="lg"
+        style={{ color: "#1a73e8", textAlign: "center" }}
+      >
+        Crop Production Extremes (1950-2020)
+      </Text>
+      {chartSection()}
+      {tableSection()}
     </Card>
   );
 };
